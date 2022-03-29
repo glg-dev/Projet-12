@@ -1,0 +1,25 @@
+.header {
+  // position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $black;
+  gap: 10%;
+  height: 10vh;
+  width: 95%;
+  padding-left: 19px;
+  padding-right: 87px;
+  font-size: 1.5rem;
+  color: #FFF;
+  z-index: 1;
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}

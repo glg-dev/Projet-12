@@ -1,0 +1,28 @@
+.sidebar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 90vh;
+  width: 117px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 164px;
+  background: $black;
+  color: #FFF;
+  z-index: 0;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  img {
+    width: 64px;
+  }
+  .copyright {
+    font-size: 12px;
+    transform: rotate(-90deg);
+    width: 140px;
+  }
+}

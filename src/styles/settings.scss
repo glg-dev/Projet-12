@@ -1,0 +1,18 @@
+$font-1: 'Roboto', sans-serif;
+
+$black: #020203;
+$red1: #FF0101;
+$red2: #E60000;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-1;
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
