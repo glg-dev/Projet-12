@@ -1,0 +1,28 @@
+.activity-chart {
+  grid-area: A;
+}
+.average-sessions-chart {
+  background: #FF0000;
+  width: 258px;
+  height: 263px;
+  grid-area: B;
+  h4 {
+    font-size: 15px;
+    width: 147px;
+    color: #FFF;
+    opacity: 50.4%;
+    padding: 30px 77px 30px 34px;
+  }
+}
+
+.skills-chart {
+  background: #282D30;
+  width: 258px;
+  height: 263px;
+  grid-area: C;
+}
+.score-chart {
+  width: 258px;
+  height: 263px;
+  grid-area: D;
+}
