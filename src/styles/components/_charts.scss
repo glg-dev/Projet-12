@@ -1,17 +1,45 @@
 .activity-chart {
+  position: relative;
   grid-area: A;
+  background: #FBFBFB;
+  padding: 24px 30px;
+  h4 {
+    position: absolute;
+    top: 0px;
+    left: 32px;
+  }
+  .custom-tooltip {
+    text-align: center;
+    background: #E60000;
+    color: #FFF;
+    padding: 4px;
+    font-size: 8px;
+  }
+  .legend-ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    gap: 52px;
+  }
 }
 .average-sessions-chart {
   background: #FF0000;
   width: 258px;
   height: 263px;
   grid-area: B;
+  border-radius: 5px;
+  // padding-bottom: 13px;
   h4 {
     font-size: 15px;
     width: 147px;
     color: #FFF;
     opacity: 50.4%;
-    padding: 30px 77px 30px 34px;
+    padding: 10px 77px 30px 34px;
+  }
+  .custom-tooltip {
+    background: #FFF;
+    padding: 1px 4px;
+    font-size: 8px;
   }
 }
 
@@ -20,9 +48,18 @@
   width: 258px;
   height: 263px;
   grid-area: C;
+  border-radius: 5px;
 }
 .score-chart {
+  position: relative;
+  background: #FBFBFB;
   width: 258px;
   height: 263px;
   grid-area: D;
+  border-radius: 5px;
+  h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }

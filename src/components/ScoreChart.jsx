@@ -14,10 +14,13 @@ const ScoreChart = ({score}) => {
   const scoreValue = [{value: score}]
   return (
     <div className='score-chart'>
+      <h4>Score</h4>
       <ResponsiveContainer width='100%' height='100%'>
         <RadialBarChart data={scoreValue} innerRadius={80} barSize={10} startAngle={90} endAngle={450}>
           <PolarAngleAxis type='number' domain={[0, 1]} tick={false} />
-          <RadialBar dataKey='value' background fill='#FF0000' />
+          <RadialBar dataKey='value' background fill='#FF0000' cornerRadius={5} />
+          <text x='50%' y='45%' textAnchor="middle" fontWeight='700' >{score*100}%</text>
+          <text x='50%' y='55%' textAnchor="middle" fontSize='16' fill='grey' >de votre objectif</text>
         </RadialBarChart>
       </ResponsiveContainer>
     </div>

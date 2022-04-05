@@ -11,6 +11,8 @@ import PropTypes from 'prop-types';
  */
 const SkillsChart = () => {
   const { data, loading } = PerformancesData()
+  console.log(data);
+  console.log(data.kind);
 
   return (
     <div className='skills-chart'>
@@ -20,7 +22,7 @@ const SkillsChart = () => {
         <RadarChart width={258} height={263} data={data.data}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis dataKey="kind" tickSize={10} tick={{fill: '#FFF', fontSize: 10}} />
-          <PolarRadiusAxis axisLine={false} tickLine={false} />
+          <PolarRadiusAxis axisLine={false} tick={false} />
           <Radar dataKey='kind' fill="#FF0101" fillOpacity={0.71} />
         </RadarChart>
       )}
