@@ -49,7 +49,9 @@
   height: 263px;
   grid-area: C;
   border-radius: 5px;
+  text-transform: capitalize;
 }
+
 .score-chart {
   position: relative;
   background: #FBFBFB;
