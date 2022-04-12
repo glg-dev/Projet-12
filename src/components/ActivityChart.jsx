@@ -40,16 +40,16 @@ const ActivityChart = () => {
     return null;
   }
 
-  // const CustomLegend = ({ payload }) => {
-  //   return (
-  //     <div className="custom-legend">
-  //       <ul className='legend-ul'>
-  //         <li className="label">{`${payload[0].value} (kg)`}</li>
-  //         <li className="label">{`${payload[1].value} (kCal)`}</li>
-  //       </ul>
-  //     </div>
-  //   )
-  // }
+  const CustomLegend = ({ payload }) => {
+    return (
+      <div className="custom-legend">
+        <ul className='legend-ul'>
+          <li className="label">{`${payload[0].value} (kg)`}</li>
+          <li className="label">{`${payload[1].value} (kCal)`}</li>
+        </ul>
+      </div>
+    )
+  }
 
 
 
@@ -65,7 +65,7 @@ const ActivityChart = () => {
         <YAxis yAxisId="right" dataKey="kilogram" domain={['dataMin - 1', 'dataMax +1']} orientation='right' axisLine={false} tickLine={false} />
         <YAxis yAxisId="left" dataKey="calories" domain={[0, 'auto']} orientation='left' hide />
         <Tooltip content={<CustomTooltip />} />
-        <Legend marginBottom={10} align='right' verticalAlign='top' iconType='circle' iconSize={10} height={95}/>
+        <Legend marginBottom={10} align='right' verticalAlign='top' iconType='circle' iconSize={10} height={95} content={<CustomLegend />}/>
         <Bar yAxisId="right" dataKey="kilogram" fill='#282D30' barSize={7} radius={[5, 5, 0, 0]} />
         <Bar yAxisId="left" dataKey="calories" fill='#E60000' barSize={7} radius={[5, 5, 0, 0]} />
       </BarChart>

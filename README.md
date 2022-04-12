@@ -1,3 +1,7 @@
+Prerequisites:
+NodeJS (version 12.18)
+
+
 1. Fork the repo: `https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard`
 2. Clone the repo: `git clone`
 3. Open the README.md file: `README.md`

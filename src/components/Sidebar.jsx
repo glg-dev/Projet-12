@@ -4,6 +4,11 @@ import swimming from '../assets/img/swimming.svg';
 import bike from '../assets/img/bike.svg';
 import pump from '../assets/img/pump.svg';
 
+/**
+ *
+ * @description Component to display the sidebar of the app
+ * @return {JSX.Element}
+ */
 const Sidebar = () => {
   return (
     <div className='sidebar'>

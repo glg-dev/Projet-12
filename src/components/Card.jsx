@@ -1,6 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+/**
+ *
+ *
+ * @param {*} { icon, quantity, unity, type }
+ * @description Component to display the amount of calories burned, proteins, fats, carbohydrates
+ * @return {JSX.Element}} 
+ */
 const Card = ({ icon, quantity, unity, type }) => {
   return (
     <div className='card'>

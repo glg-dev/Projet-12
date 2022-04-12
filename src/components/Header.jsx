@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from '../assets/img/logo.png';
 
+/**
+ *
+ * @description Component to display the header of the app
+ * @return {JSX.Element} 
+ */
 const Header = () => {
   return (
     <div className='header'>
