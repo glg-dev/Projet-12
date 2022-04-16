@@ -14,13 +14,16 @@ import ScoreChart from '../components/ScoreChart';
 
 
 const Home = () => {
-  const { userInfos, keyData, score, loading } = DataUser()
+  const { userInfos, keyData, score, loading, error } = DataUser()
 
   return (
     <div className='home'>
       <Header />
       <Sidebar />
-      {loading ? (
+      {error? (
+        <div className='error'>Une erreur est survenue, veuillez réessayer plus tard...</div>
+      ) : 
+      loading ? (
         <div>Patientez, vos données sont en chargement...</div>
       ) : (
         <div className='home-content'>

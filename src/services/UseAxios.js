@@ -7,8 +7,11 @@ const UseAxios = (url) => {
   const [error, setError] = useState()
 
   useEffect(() => {
-    if (!url) return
     setLoading(true)
+    if (!url) {
+      console.log('error');
+      return
+    } 
     axios
       .get(url)
       .then((res) => {

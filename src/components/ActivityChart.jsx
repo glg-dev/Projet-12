@@ -40,17 +40,6 @@ const ActivityChart = () => {
     return null;
   }
 
-  const CustomLegend = ({ payload }) => {
-    return (
-      <div className="custom-legend">
-        <ul className='legend-ul'>
-          <li className="label">{`${payload[0].value} (kg)`}</li>
-          <li className="label">{`${payload[1].value} (kCal)`}</li>
-        </ul>
-      </div>
-    )
-  }
-
 
 
   return (
@@ -65,24 +54,24 @@ const ActivityChart = () => {
         <YAxis yAxisId="right" dataKey="kilogram" domain={['dataMin - 1', 'dataMax +1']} orientation='right' axisLine={false} tickLine={false} />
         <YAxis yAxisId="left" dataKey="calories" domain={[0, 'auto']} orientation='left' hide />
         <Tooltip content={<CustomTooltip />} />
-        <Legend marginBottom={10} align='right' verticalAlign='top' iconType='circle' iconSize={10} height={95} content={<CustomLegend />}/>
-        <Bar yAxisId="right" dataKey="kilogram" fill='#282D30' barSize={7} radius={[5, 5, 0, 0]} />
-        <Bar yAxisId="left" dataKey="calories" fill='#E60000' barSize={7} radius={[5, 5, 0, 0]} />
+        <Legend marginBottom={10} align='right' verticalAlign='top' iconType='circle' iconSize={10} height={95}/>
+        <Bar yAxisId="right" dataKey="kilogram" name='Poids(kg)' fill='#282D30' barSize={7} radius={[5, 5, 0, 0]} />
+        <Bar yAxisId="left" dataKey="calories" name='Calories brûlées (kCal)' fill='#E60000' barSize={7} radius={[5, 5, 0, 0]} />
       </BarChart>
       )}
     </div>
   );
 };
 
-ActivityChart.propTypes = {
-  sessions : PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.number.isRequired,
-      kilogram: PropTypes.number.isRequired,
-      calorie: PropTypes.number.isRequired,
-    })
-  )
-};
+// ActivityChart.propTypes = {
+//   sessions : PropTypes.arrayOf(
+//     PropTypes.shape({
+//       day: PropTypes.number.isRequired,
+//       kilogram: PropTypes.number.isRequired,
+//       calorie: PropTypes.number.isRequired,
+//     })
+//   )
+// };
 
 
 export default ActivityChart;
