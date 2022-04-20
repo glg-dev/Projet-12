@@ -1,19 +1,17 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const UseAxios = (url) => {
+const UseAxios = (query) => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState()
+  
+  const userId = 18
 
   useEffect(() => {
     setLoading(true)
-    if (!url) {
-      console.log('error');
-      return
-    } 
     axios
-      .get(url)
+      .get(`http://localhost:3000/user/${userId}/` + query)
       .then((res) => {
         setData(res.data.data)
       })
@@ -24,8 +22,7 @@ const UseAxios = (url) => {
       .finally(() => {
         setLoading(false)
       })
-    }, [url])
-    // console.log(data);
+    }, [query])
     return ({ data, loading, error });
   };
 

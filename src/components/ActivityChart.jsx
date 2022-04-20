@@ -1,7 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
 import ActivityData from '../services/ActivityData';
-import PropTypes from 'prop-types';
 
 
 /**
@@ -12,21 +11,7 @@ import PropTypes from 'prop-types';
  * @return {JSX.Element}} 
  */
 const ActivityChart = () => {
-  const { sessions, loading } = ActivityData();
-
-  const data = []
-  
-
-  if (sessions) {
-    for (let day = 0; day < sessions.length; day++) {
-      const dayStr = (day + 1).toString()
-      data.push({
-        day: dayStr,
-        kilogram: sessions[day].kilogram,
-        calories: sessions[day].calories
-      })
-    }
-  }
+  const { loading, activityData } = ActivityData();
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length > 0) {
@@ -48,7 +33,7 @@ const ActivityChart = () => {
       {loading ? (
         <div>Patientez, vos données sont en chargement...</div>
       ) : (
-        <BarChart width={835} height={300} data={data} barCategoryGap='54px'>
+        <BarChart width={835} height={300} data={activityData} barCategoryGap='54px'>
         <CartesianGrid vertical={false} strokeDasharray='3 3' />
         <XAxis dataKey='day' />
         <YAxis yAxisId="right" dataKey="kilogram" domain={['dataMin - 1', 'dataMax +1']} orientation='right' axisLine={false} tickLine={false} />
@@ -62,16 +47,5 @@ const ActivityChart = () => {
     </div>
   );
 };
-
-// ActivityChart.propTypes = {
-//   sessions : PropTypes.arrayOf(
-//     PropTypes.shape({
-//       day: PropTypes.number.isRequired,
-//       kilogram: PropTypes.number.isRequired,
-//       calorie: PropTypes.number.isRequired,
-//     })
-//   )
-// };
-
 
 export default ActivityChart;

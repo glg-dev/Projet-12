@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from 'recharts';
 import PerformancesData from '../services/PerformancesData';
-import PropTypes from 'prop-types';
 
 
 /**
@@ -10,17 +9,8 @@ import PropTypes from 'prop-types';
  * @return {JSX.Element} 
  */
 const SkillsChart = () => {
-  const [result, setResult] = useState([]);
-  const { data, loading } = PerformancesData()
+  const { result, loading } = PerformancesData()
 
-  useEffect(() => {
-    if (data?.data) {
-      setResult(data?.data.map(item => {
-        item.kind = data.kind[item.kind]
-        return item
-      }))
-    }
-  }, [data])
 
   return (
     <div className='skills-chart'>
@@ -37,14 +27,5 @@ const SkillsChart = () => {
     </div>
   );
 };
-
-// SkillsChart.propTypes = {
-//   data : PropTypes.arrayOf(
-//     PropTypes.shape({
-//       kind: PropTypes.string.isRequired,
-//       value: PropTypes.number.isRequired,
-//     })
-//   )
-// };
 
 export default SkillsChart;
