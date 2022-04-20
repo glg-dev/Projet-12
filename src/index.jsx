@@ -9,7 +9,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route exact path='/user/:id' element={<Home />} />
         <Route path='*' element={<Error />} />
       </Routes>
     </BrowserRouter>

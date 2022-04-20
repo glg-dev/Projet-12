@@ -1,17 +1,17 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const UseAxios = (query) => {
+const UseAxios = (endpoint) => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState()
-  
-  const userId = 18
+
+  const userId = window.location.pathname
 
   useEffect(() => {
     setLoading(true)
     axios
-      .get(`http://localhost:3000/user/${userId}/` + query)
+      .get(`http://localhost:3000${userId}/` + endpoint)
       .then((res) => {
         setData(res.data.data)
       })
@@ -22,7 +22,7 @@ const UseAxios = (query) => {
       .finally(() => {
         setLoading(false)
       })
-    }, [query])
+    }, [userId, endpoint])
     return ({ data, loading, error });
   };
 

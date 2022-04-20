@@ -1,6 +1,0 @@
-ActivityChart.jsx :
-  - Bar: radius 
-  - YAxis: démarrer à 69
-  - XAxis: afficher 1, 2, 3, etc.
-  - Legend: mettre au niveau du titre
-  - Tooltip: Enlever jour + légendes, background #E60000
